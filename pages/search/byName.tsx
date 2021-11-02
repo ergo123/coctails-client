@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import {fetchCoctails} from "../lib/api/api";
-import {Coctail} from "../lib/model/coctail";
-import {CoctailListElement} from "../lib/components/CoctailListElement";
+import {fetchCoctails} from "../../lib/api/api";
+import {Coctail} from "../../lib/model/coctail";
+import {CoctailListElement} from "../../lib/components/CoctailListElement";
 import {useEffect, useState} from "react";
 
 const Home = ({ coctails }: { coctails: Coctail[]}) => {
@@ -15,11 +15,11 @@ const Home = ({ coctails }: { coctails: Coctail[]}) => {
   return (
     <>
       <Head>
-        <title>Coctails</title>
-        <meta name="description" content="Find a coctail by ingredients you have" />
+        <title>Coctails - search by name</title>
+        <meta name="description" content="Find a coctail by name" />
       </Head>
       <div className="pt-7">
-        <h1 className="text-darkergrey text-2xl font-light tracking-wider mb-7">Random coctails</h1>
+        <h1 className="text-darkergrey text-2xl font-light tracking-wider mb-7">Search coctails by name</h1>
         <div >
           {randomCoctails.map(coctail => <CoctailListElement key={coctail.name} coctail={coctail} />)}
         </div>
